@@ -3,6 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { AdjustmentsHorizontalIcon, ChevronDownIcon, UserIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -33,7 +34,7 @@ const HomeScreen = () => {
         {/* End Header */}
 
         {/* Search */}
-            <View className="flex-row items-center space-x-2 pb-2 mx-4">
+            <View className="flex-row items-center space-x-2 mx-4">
                 <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
                     <MagnifyingGlassIcon size={20} color="gray"/>
                     <TextInput placeholder='Restaurants and Cuisines' keyboardType='default'/>
@@ -45,14 +46,28 @@ const HomeScreen = () => {
 
         {/* Body */}
             <ScrollView contentContainerStyle={{
-                paddingTop: 20
+                paddingTop: 15
             }}>
                 {/* Categories */}
                 <Categories />
                 {/*  End Categories */}
 
                 {/* Featured Rows */}
-
+                <FeaturedRow 
+                    id="12345"
+                    title="Featured"
+                    description="Paid placements from our partners"
+                />
+                <FeaturedRow 
+                    id="123456"
+                    title="Tasty Discounts"
+                    description="Enjoy these juicy discounts!"
+                />
+                <FeaturedRow 
+                    id="123457"
+                    title="Offers near you!"
+                    description="Support local restaurants near you!"
+                />
                 {/*  End Featured Rows */}
             </ScrollView>
         {/* End Body */}
