@@ -14,17 +14,20 @@ const FeaturedRow = ({ id, title, description}) => {
         * [_type == 'featured' && _id == $id] {
         ...,
         restaurants[] -> {
-        ...,
+          ...,
           dishes[]->,
-        type-> {
-          name
+          type-> {
+            name
+          }
         },
-        }
-      }
-        `, { id }).then(data => {
-            setRestaurants(data?.restaurants)
-        })
-}, [])
+      }[0]
+        `, 
+        { id }
+        ).then((data) => {
+          // console.log(data)
+            setRestaurants(data?.restaurants);
+        });
+}, []);
 
   return (
     <View>

@@ -17,6 +17,7 @@ const RestaurantCard = ({
     lat,
 }) => {
 
+
   return (
 
     <TouchableOpacity className="bg-white mr-3 shadow">
