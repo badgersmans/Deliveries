@@ -10,6 +10,7 @@ import {
     StarIcon ,
     QuestionMarkCircleIcon
 } from 'react-native-heroicons/solid'
+import BasketIcon from '../components/BasketIcon'
 
 const RestaurantScreen = () => {
 
@@ -35,10 +36,12 @@ const RestaurantScreen = () => {
         })
     }, [])
 
-    console.log(dishes);
-
+    // console.log(dishes);
 
   return (
+    <>
+    <BasketIcon />
+
     <SafeAreaView>
         <ScrollView>
             <View className="relative">
@@ -90,7 +93,7 @@ const RestaurantScreen = () => {
                 </TouchableOpacity>
             </View>
 
-                <View>
+                <View className="pb-36">
                     <Text className="px-4 pt-6 mb-3 font-bold text-xl">
                         Menu
                     </Text>
@@ -111,6 +114,7 @@ const RestaurantScreen = () => {
 
         </ScrollView>
     </SafeAreaView>
+    </>
   )
 }
 
